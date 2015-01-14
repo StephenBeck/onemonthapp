@@ -2,9 +2,8 @@
 	<h1>One Month App</h1>
 	<p>I'm making an app. Where's my billion dollar IPO at?</p>
 	<% if user_signed_in? %>
-	# do something
-		<p>
-		</p>
+		<p>Ps, Satoshi Nakamoto says hello.</p>
+		<p><img src="satoshi-nakamoto.jpg"></p>
 	<% else %>
 		<p>
 			<%= link_to "Register" , new_user_registration_path , class: "btn btn-default btn-lg home-butt" %>&nbsp;
