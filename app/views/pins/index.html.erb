@@ -13,15 +13,16 @@
 		<thead>
 			<tr>
 				<th>This is a table.</th>
-				<th colspan="4"></th>
+				<th colspan="5"></th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<% @pins.each do |pin| %>
 			<tr>
-				<td><%= pin.user.email if pin.user %></td>
+				<td><%= image_tag pin.image.url(:thumb)%></td>
 				<td><%= pin.description %></td>
+				<td><%= pin.user.email if pin.user %></td>
 				<td><%= link_to 'View', pin %></td>
 				<% if pin.user == current_user %>
 					<td><%= link_to 'Edit', edit_pin_path(pin) %></td>

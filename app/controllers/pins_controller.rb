@@ -26,8 +26,8 @@ class PinsController < ApplicationController
   def create
     # @pin = Pin.new(pin_params)
     @pin = current_user.pins.build(pin_params)
-    @pin.save
-    # flash[:notice] = 'Pin was successfully created.' if @pin.save
+    # @pin.save
+    flash[:notice] = 'Pin was successfully created.' if @pin.save
     respond_with(@pin)
   end
 
@@ -52,6 +52,6 @@ class PinsController < ApplicationController
     end
 
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 end
