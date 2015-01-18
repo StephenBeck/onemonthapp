@@ -14,6 +14,7 @@ class PinsController < ApplicationController
 
   def new
     @pin = Pin.new
+    # @pin = current_user.pins.build
     respond_with(@pin)
   end
 
@@ -22,7 +23,9 @@ class PinsController < ApplicationController
 
   def create
     @pin = Pin.new(pin_params)
+    # @pin = current_user.pins.build(pin_params)
     @pin.save
+    # flash[:notice] = 'Pin was successfully created.' if @pin.save
     respond_with(@pin)
   end
 
