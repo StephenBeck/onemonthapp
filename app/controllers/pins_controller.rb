@@ -26,9 +26,13 @@ class PinsController < ApplicationController
   def create
     # @pin = Pin.new(pin_params)
     @pin = current_user.pins.build(pin_params)
-    # @pin.save
-    flash[:notice] = 'Pin was successfully created.' if @pin.save
-    respond_with(@pin)
+    if @pin.save
+    	redirect_to @pin, notice: 'Pin was successfuly created.'
+    else
+    	render action: 'new'
+    end
+    # flash[:notice] = 'Pin was successfully created.' if @pin.save
+    # respond_with(@pin)
   end
 
   def update
