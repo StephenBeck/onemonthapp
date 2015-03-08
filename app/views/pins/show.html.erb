@@ -10,7 +10,8 @@
 
 			<div>
 				<%= image_tag @pin.image.url(:medium) %>
-				<p><strong><%= @pin.description %></strong></p>
+				<p><h3><strong><%= @pin.description %></strong></h3></p>
+				<p>Uploaded by <%= @pin.user.name %><br /><br /></p>
 			</div>
 			
 		</div>
