@@ -9,9 +9,9 @@
 		<div class="panel-body center">
 
 			<div>
-				<%= image_tag @pin.image.url(:medium) %>
+				<%= image_tag @pin.image.url(:original), class: "img-responsive" %>
 				<p><h3><strong><%= @pin.description %></strong></h3></p>
-				<p>Uploaded by <%= @pin.user.name %><br /><br /></p>
+				<p><%= image_tag avatar_url(@pin.user), class: "sm-avatar" %> Uploaded by <%= @pin.user.name %><br /><br /></p>
 			</div>
 			
 		</div>
