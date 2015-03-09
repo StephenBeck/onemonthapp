@@ -18,4 +18,13 @@ $jumbotron-bg: 						#ecf0f1;
 	font-weight: 					bold;
 }
 
+.footer-nav {
+	height:							60px;
+	background-color:				#ecf0f1;
+	padding-top:					12px;
+}
+.footer-txt {
+	color:							#999;
+}
+
 @import 'bootstrap';
